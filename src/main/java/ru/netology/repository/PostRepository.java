@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-// Stub
 public class PostRepository {
     private final ConcurrentHashMap<Long, Post> repo = new ConcurrentHashMap<>();
     private final AtomicLong idCounter = new AtomicLong(1);
@@ -18,7 +17,7 @@ public class PostRepository {
     }
 
     public Optional<Post> getById(long id) {
-        return Optional.of(repo.get(id));
+        return Optional.ofNullable(repo.get(id));
     }
 
     public Post save(Post post) {
